@@ -1,0 +1,11 @@
+<templateSet group="Java">
+  <template name="cc" value="/**&#10; * class_name: $CLASS_NAME$&#10; * package: $PACKAGE_NAME$&#10; * creat_user: CodeChase&#10; * creat_date: $CREAT_DATE$&#10; * creat_time: $CREAT_TIME$&#10; **/" description="class comment template" toReformat="false" toShortenFQNames="true">
+    <variable name="CLASS_NAME" expression="className()" defaultValue="" alwaysStopAt="true" />
+    <variable name="PACKAGE_NAME" expression="currentPackage()" defaultValue="" alwaysStopAt="true" />
+    <variable name="CREAT_DATE" expression="date()" defaultValue="" alwaysStopAt="true" />
+    <variable name="CREAT_TIME" expression="time()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+</templateSet>
