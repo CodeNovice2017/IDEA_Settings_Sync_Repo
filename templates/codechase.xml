@@ -1,0 +1,24 @@
+<templateSet group="codechase">
+  <template name="cc" value="/**&#10; * @class_name: $CLASS_NAME$&#10; * @description: &#10; * @create_user: CodeChase&#10; * @create_date: $CREATE_DATE$&#10; **/" description="class comment template" toReformat="false" toShortenFQNames="true">
+    <variable name="CLASS_NAME" expression="className()" defaultValue="" alwaysStopAt="true" />
+    <variable name="CREATE_DATE" expression="date()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="mc" value="/**&#10; * @method_name: $METHOD_NAME$&#10; * @param: $METHOD_PARAM$&#10; * @description: &#10; * @create_user: CodeChase&#10; * @create_date: $CREATE_DATE$&#10; **/" description="method comment template" toReformat="false" toShortenFQNames="true">
+    <variable name="METHOD_NAME" expression="methodName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="METHOD_PARAM" expression="methodParameters()" defaultValue="" alwaysStopAt="true" />
+    <variable name="CREATE_DATE" expression="date()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="try" value="try {&#10;    $SELECTION$&#10;} catch (Exception e){&#10;    log.error(&quot;error&quot;, e);&#10;    $END$&#10;}" description="try catch template" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>
