@@ -5,22 +5,32 @@
     <variable name="CREATE_TIME" expression="time()" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="JAVA_DECLARATION" value="true" />
-      <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="mc" value="/**&#10; * @method_name $METHOD_NAME$&#10;$param$ &#10; * @description &#10; * @author ChenXin&#10; * @date $CREATE_DATE$ $CREATE_TIME$ &#10; **/" description="method comment template" toReformat="true" toShortenFQNames="true">
+  <template name="mc" value="/**&#10; * @method_name $METHOD_NAME$&#10; * @description &#10; * @author ChenXin&#10; * @date $CREATE_DATE$ $CREATE_TIME$ &#10; **/" description="method comment template" toReformat="true" toShortenFQNames="true">
     <variable name="METHOD_NAME" expression="methodName()" defaultValue="" alwaysStopAt="true" />
-    <variable name="param" expression="groovyScript(&quot;def result=''; def params=\&quot;${_1}\&quot;.replaceAll('[\\\\[|\\\\]|\\\\s]', '').split(',').toList(); for(i = 0; i &lt; params.size(); i++) {result+=' * @param ' + params[i] + ((i &lt; params.size() - 1) ? '\\n' : '')}; return result&quot;, methodParameters())" defaultValue="" alwaysStopAt="true" />
     <variable name="CREATE_DATE" expression="date()" defaultValue="" alwaysStopAt="true" />
     <variable name="CREATE_TIME" expression="time()" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="JAVA_DECLARATION" value="true" />
-      <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
   <template name="try" value="try {&#10;    $SELECTION$&#10;} catch (Exception e){&#10;    log.error(&quot;error&quot;, e);&#10;    $END$&#10;}" description="try catch template" toReformat="false" toShortenFQNames="true">
     <context>
-      <option name="JAVA_STATEMENT" value="true" />
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="pfs" value="private final static String $varName$ = &quot;$var$&quot;;" description="private final static String template" toReformat="false" toShortenFQNames="true">
+    <variable name="varName" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="var" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="logger" value="private static final Logger LOGGER = LoggerFactory.getLogger($CLASS$.class);" description="LOGGER template" toReformat="false" toShortenFQNames="true">
+    <variable name="CLASS" expression="className()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
 </templateSet>
