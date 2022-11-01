@@ -15,7 +15,7 @@
   </template>
   <template name="try" value="try {&#10;    $SELECTION$&#10;} catch (Exception e){&#10;    log.error(&quot;error&quot;, e);&#10;    $END$&#10;}" description="try catch template" toReformat="false" toShortenFQNames="true">
     <context>
-      <option name="JAVA_DECLARATION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
   <template name="pfs" value="public static final String $varName$ = &quot;$var$&quot;;" description="private final static String template" toReformat="false" toShortenFQNames="true">
